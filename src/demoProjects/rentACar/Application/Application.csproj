@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
+    <ProjectReference Include="..\..\rentACar-2\Domain\Domain.csproj" />
+  </ItemGroup>
+
 </Project>
