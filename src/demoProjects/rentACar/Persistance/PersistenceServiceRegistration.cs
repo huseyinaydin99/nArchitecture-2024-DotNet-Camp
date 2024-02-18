@@ -29,7 +29,8 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<BaseDbContext>(options =>
                                                  options.UseSqlServer(
                                                      configuration.GetConnectionString("RentACarCampConnectionString")));
-        services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<IBrandRepository,BrandRepository>();
+        //services.AddTransient<BrandRepository>();
         /*services.AddScoped<IModelRepository, ModelRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
