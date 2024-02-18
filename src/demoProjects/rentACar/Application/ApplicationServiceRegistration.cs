@@ -1,4 +1,5 @@
-﻿using Application.Services.Repositories;
+﻿using Application.Features.Brands.Rules;
+using Application.Services.Repositories;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,7 +18,7 @@ public static class ApplicationServiceRegistration
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());
 
-        //services.AddScoped<SomeFeatureEntityBusinessRules>();
+        services.AddScoped<BrandBusinessRules>();
         //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         /*services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));

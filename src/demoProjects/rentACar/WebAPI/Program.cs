@@ -1,5 +1,6 @@
 ﻿using Persistence;
 using Application;
+using Core.CrossCuttingConcerns.Exceptions;
 
 //بسم الله الرحمن الرحيم
 /**
@@ -32,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+//app.ConfigureCustomExceptionMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();
