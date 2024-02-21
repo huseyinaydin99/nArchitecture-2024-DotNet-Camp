@@ -62,6 +62,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{81ADB4C9-6D2A-42AF-9139-F010878B1FCB}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\Documents\1_0Pg6_UsaKiiEqUV3kf2HXg.png = ..\..\Documents\1_0Pg6_UsaKiiEqUV3kf2HXg.png
+		..\..\Documents\Ekran görüntüsü 2024-02-21 164826.png = ..\..\Documents\Ekran görüntüsü 2024-02-21 164826.png
+		..\..\Documents\Ekran görüntüsü 2024-02-21 164916.png = ..\..\Documents\Ekran görüntüsü 2024-02-21 164916.png
 		..\..\Documents\Swagger.png = ..\..\Documents\Swagger.png
 	EndProjectSection
 EndProject

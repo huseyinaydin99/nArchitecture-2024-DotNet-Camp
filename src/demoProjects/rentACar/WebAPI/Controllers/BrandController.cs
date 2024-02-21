@@ -38,8 +38,9 @@ public class BrandController : BaseController
     }
 
     [HttpGet("{Id}")]
-    public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdBrandQuery)
+    public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdIdBrandQuery)
     {
-        return Ok(Mediator.Send(getByIdBrandQuery));
+        BrandGetByIdDto brandGetByIdDto = await Mediator.Send(getByIdIdBrandQuery);
+        return Ok(brandGetByIdDto);
     }
 }
