@@ -38,4 +38,10 @@ public class BrandBusinessRules
     {
         if (brand == null) throw new BusinessException("İstenilen marka mevcut değil.");
     }
+
+    public async Task BrandShouldExistsWhenRequested(Brand brand)
+    {
+        //Brand brand = await _brandRepository.GetAsync(b => b.Id == id);
+        if (brand == null) throw new BusinessException("Bu marka mevcut değil.");
+    }
 }
