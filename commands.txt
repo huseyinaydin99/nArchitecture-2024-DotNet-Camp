@@ -1,2 +1,7 @@
 add-migration Init
 update-database
+
+---------------------------
+add-migration Add-Model
+update-database
+---------------------------

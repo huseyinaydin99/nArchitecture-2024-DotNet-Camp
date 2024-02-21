@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Brand:Entity
+    public class Brand : Entity
     {
         public string Name { get; set; }
 
-        public virtual ICollection<Model> Models { get; set; }
+        public virtual ICollection<Model> Models { get; set; } = new List<Model>();
 
         public Brand()
         {
+            //Models = new List<Model>();
         }
 
-        public Brand(int id, string name):this()
+        public Brand(int id, string name) : this()
         {
             Id = id;
             Name = name;

@@ -20,8 +20,11 @@ public class Brand : Entity
 {
     public string Name { get; set; }
 
+    public virtual ICollection<Model> Models { get; set; } = new List<Model>();
+
     public Brand()
     {
+        //Models = new List<Model>();
     }
 
     public Brand(int id, string name) : this()
