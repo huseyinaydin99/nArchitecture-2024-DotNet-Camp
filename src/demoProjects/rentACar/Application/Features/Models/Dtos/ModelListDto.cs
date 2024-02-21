@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//بسم الله الرحمن الرحيم
+/**
+ *
+ * @author Huseyin_Aydin
+ * @since 1994
+ * @category DotNet Core nArchitechture, C#.
+ *
+ */
+
+namespace Application.Features.Models.Dtos;
+
+public class ModelListDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string BrandName { get; set; }
+    public decimal DailyPrice { get; set; }
+    public string ImageUrl { get; set; }
+}
