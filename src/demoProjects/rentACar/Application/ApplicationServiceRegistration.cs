@@ -1,5 +1,7 @@
 ﻿using Application.Features.Brands.Rules;
 using Application.Services.Repositories;
+using Core.Application.Pipelines.Validation;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -8,6 +10,15 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
+//بسم الله الرحمن الرحيم
+/**
+ *
+ * @author Huseyin_Aydin
+ * @since 1994
+ * @category DotNet Core nArchitechture, C#.
+ *
+ */
 
 namespace Application;
 
@@ -19,12 +30,12 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(Assembly.GetExecutingAssembly());
 
         services.AddScoped<BrandBusinessRules>();
-        //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         /*services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));*/
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));*/
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
         return services;
     }
 }

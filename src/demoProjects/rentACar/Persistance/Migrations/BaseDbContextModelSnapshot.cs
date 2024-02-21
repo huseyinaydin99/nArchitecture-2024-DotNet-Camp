@@ -7,96 +7,104 @@ using Persistence.Contexts;
 
 #nullable disable
 
-namespace Persistance.Migrations
+//بسم الله الرحمن الرحيم
+/**
+ *
+ * @author Huseyin_Aydin
+ * @since 1994
+ * @category DotNet Core nArchitechture, C#.
+ *
+ */
+
+namespace Persistance.Migrations;
+
+[DbContext(typeof(BaseDbContext))]
+partial class BaseDbContextModelSnapshot : ModelSnapshot
 {
-    [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    protected override void BuildModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+        modelBuilder
+            .HasAnnotation("ProductVersion", "6.0.8")
+            .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+        SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Entities.Brand", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+        modelBuilder.Entity("Domain.Entities.Brand", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)")
+                    .HasColumnName("Name");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Brands", (string)null);
+                b.ToTable("Brands", (string)null);
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Renault"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Tofaş"
-                        });
-                });
+                b.HasData(
+                    new
+                    {
+                        Id = 1,
+                        Name = "Renault"
+                    },
+                    new
+                    {
+                        Id = 2,
+                        Name = "Tofaş"
+                    });
+            });
 
-            modelBuilder.Entity("Domain.Entities.Model", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+        modelBuilder.Entity("Domain.Entities.Model", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("BrandId")
-                        .HasColumnType("int");
+                b.Property<int>("BrandId")
+                    .HasColumnType("int");
 
-                    b.Property<decimal>("DailyPrice")
-                        .HasColumnType("decimal(18,2)");
+                b.Property<decimal>("DailyPrice")
+                    .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("ImageUrl")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.HasIndex("BrandId");
+                b.HasIndex("BrandId");
 
-                    b.ToTable("Model");
-                });
+                b.ToTable("Model");
+            });
 
-            modelBuilder.Entity("Domain.Entities.Model", b =>
-                {
-                    b.HasOne("Domain.Entities.Brand", "Brand")
-                        .WithMany("Models")
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+        modelBuilder.Entity("Domain.Entities.Model", b =>
+            {
+                b.HasOne("Domain.Entities.Brand", "Brand")
+                    .WithMany("Models")
+                    .HasForeignKey("BrandId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
 
-                    b.Navigation("Brand");
-                });
+                b.Navigation("Brand");
+            });
 
-            modelBuilder.Entity("Domain.Entities.Brand", b =>
-                {
-                    b.Navigation("Models");
-                });
+        modelBuilder.Entity("Domain.Entities.Brand", b =>
+            {
+                b.Navigation("Models");
+            });
 #pragma warning restore 612, 618
-        }
     }
 }
