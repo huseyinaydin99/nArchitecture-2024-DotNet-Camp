@@ -1,0 +1,21 @@
+{
+  "sort": [
+    {
+      "field": "Name",
+      "dir": "asc"
+    }
+  ],
+  "filter": {
+    "field": "Name",
+    "operator": "eq",
+    "value": "Series 4",
+    "logic": "or",
+    "filters": [
+      {
+           "field": "DailyPrice",
+           "operator": "gte",
+           "value": "1000"
+      }
+    ]
+  }
+}

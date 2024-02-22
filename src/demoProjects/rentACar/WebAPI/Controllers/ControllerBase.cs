@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-public class BaseController : ControllerBase
+public class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
 {
     protected IMediator? Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
     private IMediator? _mediator;

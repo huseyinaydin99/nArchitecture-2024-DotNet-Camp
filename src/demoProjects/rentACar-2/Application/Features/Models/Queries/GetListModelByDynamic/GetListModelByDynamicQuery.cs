@@ -35,7 +35,8 @@ namespace Application.Features.Models.Queries.GetListModelByDynamic
             public async Task<ModelListModel> Handle(GetListModelByDynamicQuery request, CancellationToken cancellationToken)
             {
                 //car models
-                IPaginate<Model> models = await _modelRepository.GetListByDynamicAsync(request.Dynamic,include:
+                IPaginate<Model> models = await _modelRepository.GetListByDynamicAsync(request.Dynamic,
+                                              include:
                                               m => m.Include(c => c.Brand),
                                               index: request.PageRequest.Page,
                                               size: request.PageRequest.PageSize

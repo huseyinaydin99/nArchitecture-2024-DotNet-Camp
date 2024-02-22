@@ -20,7 +20,7 @@ namespace WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class BrandController : BaseController
+public class BrandsController : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)

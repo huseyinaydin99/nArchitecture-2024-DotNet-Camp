@@ -2,6 +2,7 @@
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Requests;
+using Core.Persistence.Dynamic;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
@@ -12,36 +13,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//بسم الله الرحمن الرحيم
-/**
- *
- * @author Huseyin_Aydin
- * @since 1994
- * @category DotNet Core nArchitechture, C#.
- *
- */
+namespace Application.Features.Models.Queries.GetListModelByDynamic;
 
-namespace Application.Features.Models.Queries.GetListModel;
-
-public class GetListModelQuery : IRequest<ModelListModel>
+public class GetListModelByDynamicQuery : IRequest<ModelListModel>
 {
+    public Dynamic Dynamic { get; set; }
     public PageRequest PageRequest { get; set; }
-    public class GetListModelQueryHandler : IRequestHandler<GetListModelQuery, ModelListModel>
+    public class GetListModelByDynamicQueryHandler : IRequestHandler<GetListModelByDynamicQuery, ModelListModel>
     {
         private readonly IModelRepository _modelRepository;
         private readonly IMapper _mapper;
         //private readonly ModelBusinessRules _modelBusinessRules;
 
-        public GetListModelQueryHandler(IModelRepository modelRepository, IMapper mapper /*,BrandBusinessRules brandBusinessRules*/)
+        public GetListModelByDynamicQueryHandler(IModelRepository modelRepository, IMapper mapper /*,BrandBusinessRules brandBusinessRules*/)
         {
             _modelRepository = modelRepository;
             _mapper = mapper;
             //_brandBusinessRules = brandBusinessRules;
         }
-        public async Task<ModelListModel> Handle(GetListModelQuery request, CancellationToken cancellationToken)
+        public async Task<ModelListModel> Handle(GetListModelByDynamicQuery request, CancellationToken cancellationToken)
         {
-            IPaginate<Model> models = await _modelRepository.GetListAsync(include:
-                                               m => m.Include(c => c.Brand),
+            IPaginate<Model> models = await _modelRepository.GetListByDynamicAsync(
+                                               dynamic: request.Dynamic,
+                                               include: m => m.Include(c => c.Brand),
                                                index: request.PageRequest.Page,
                                                size: request.PageRequest.PageSize
                                                );

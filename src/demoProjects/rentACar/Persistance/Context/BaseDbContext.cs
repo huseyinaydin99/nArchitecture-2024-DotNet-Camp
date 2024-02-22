@@ -63,8 +63,8 @@ public class BaseDbContext : DbContext
         Brand[] brandSeedData = { new(1, "Renault"), new(2, "Tofaş") };
         modelBuilder.Entity<Brand>().HasData(brandSeedData);
 
-        Model[] modelEntitySeeds = {new(1,1,"Series 4", 1500,""), new(2, 1, "Series 3", 1200, "")
-                    , new(3, 2, "A180", 1000, "") };
+        Model[] modelEntitySeeds = { new(1,1,"Broadway RNI", 1500,""), new(2, 1, "Toros 12 kişi. biniyoruz.", 1200, "")
+                    , new(3, 2, "Doğan SLX", 1000, "") };
         modelBuilder.Entity<Model>().HasData(modelEntitySeeds);
     }
 }
