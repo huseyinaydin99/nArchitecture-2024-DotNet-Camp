@@ -5,3 +5,6 @@ update-database
 add-migration Add-Model
 update-database
 ---------------------------
+add-migration add-user-claim-models
+update-database
+---------------------------
