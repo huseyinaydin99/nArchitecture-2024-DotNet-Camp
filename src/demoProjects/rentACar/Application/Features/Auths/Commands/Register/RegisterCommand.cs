@@ -16,7 +16,7 @@ namespace Application.Features.Auths.Commands.Register;
 
 public class RegisterCommand : IRequest<RegisteredDto>
 {
-    UserForRegisterDto UserForRegisterDto { get; set; }
+    public UserForRegisterDto UserForRegisterDto { get; set; }
     public string IpAddress { get; set; }
 
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisteredDto>
