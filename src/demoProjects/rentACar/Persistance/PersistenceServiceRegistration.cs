@@ -31,12 +31,10 @@ public static class PersistenceServiceRegistration
                                                      configuration.GetConnectionString("RentACarCampConnectionString")));
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<IModelRepository, ModelRepository>();
-        //services.AddTransient<BrandRepository>();
-        /*services.AddScoped<IModelRepository, ModelRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
-        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();*/
+        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
         return services;
     }
