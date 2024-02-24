@@ -61,20 +61,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\demoProj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{81ADB4C9-6D2A-42AF-9139-F010878B1FCB}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Documents\1_0Pg6_UsaKiiEqUV3kf2HXg.png = ..\..\Documents\1_0Pg6_UsaKiiEqUV3kf2HXg.png
-		..\..\Documents\Ekran görüntüsü 2024-02-21 164826.png = ..\..\Documents\Ekran görüntüsü 2024-02-21 164826.png
-		..\..\Documents\Ekran görüntüsü 2024-02-21 164916.png = ..\..\Documents\Ekran görüntüsü 2024-02-21 164916.png
-		..\..\Documents\Swagger.png = ..\..\Documents\Swagger.png
+		images\1_0Pg6_UsaKiiEqUV3kf2HXg.png = images\1_0Pg6_UsaKiiEqUV3kf2HXg.png
+		images\Ekran görüntüsü 2024-02-21 164826.png = images\Ekran görüntüsü 2024-02-21 164826.png
+		images\Ekran görüntüsü 2024-02-21 164916.png = images\Ekran görüntüsü 2024-02-21 164916.png
+		images\Swagger.png = images\Swagger.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migration_commands", "migration_commands", "{2F2936AC-70EB-4BC1-A7BC-A01DF9655343}"
 	ProjectSection(SolutionItems) = preProject
-		commands.txt = commands.txt
+		migration_commands\commands.txt = migration_commands\commands.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "request_body", "request_body", "{B5042C7A-90FB-4399-BA1D-6849799B2204}"
 	ProjectSection(SolutionItems) = preProject
-		requestbody.txt = requestbody.txt
+		request_body\request_body.txt = request_body\request_body.txt
 	EndProjectSection
 EndProject
 Global
